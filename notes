@@ -16,4 +16,4 @@ kops validate cluster --state=s3://vprrofile-kop-states
 Kops create a file for the kubectl called /.kube/config when you create cluster.
 kubectl get nodes
 
-kops delete cluster --state=s3://vprofile-kop-states --yes
+kops delete cluster --name=kubevpro.groophy.in --state=s3://vprofile-kop-states --yes
