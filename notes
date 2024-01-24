@@ -1,0 +1,17 @@
+To verifiy domain:
+nslookup -type=ns kubepro.goorphy.in
+
+Below create the configs:
+kops create cluster --name=kubevpro.groophy.in \
+--state=s3://vprofilexxxxx  us-east-2b\
+--node-count=2 --node-size=t3,small --master-size=t3.medium --dns-zone=kubevpro.groophy.in \
+--node-voulme-size=8 (means 8gb) --master-volume-size=8
+
+-To apply changes (takes 15minutes)
+kops update cluster --name kubevpro.groophy.in --state=s3://vpfroile-kop-states --yes --admin
+
+- To verify
+kops validate cluster --state=s3://vprrofile-kop-states
+
+Kops create a file for the kubectl called /.kube/config when you create cluster.
+kubectl get nodes
